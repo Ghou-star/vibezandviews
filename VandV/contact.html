@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Vibez&Views - Share your story, suggest topics, or collaborate with us!">
+    <title>Contact Us | Vibez&Views</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="responsive.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <!--<style>
+    .newsletter-box {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 16px;
+        text-align: center;
+        margin: 2rem 0;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    .newsletter-box h3 { margin: 0 0 0.5rem; font-size: 1.5rem; }
+    .newsletter-box p { margin: 0 0 1.5rem; opacity: 0.95; }
+    .newsletter-form { 
+        display: flex; 
+        gap: 10px; 
+        max-width: 480px; 
+        margin: 0 auto; 
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .newsletter-form input[type="email"] {
+        flex: 1;
+        min-width: 250px;
+        padding: 14px 16px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+    }
+    .newsletter-form button {
+        padding: 14px 28px;
+        background: #000;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .newsletter-form button:hover { background: #333; }
+    .email-link { color: #667eea; font-weight: 600; text-decoration: underline; }
+</style>-->
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html">Vibez&Views</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#shows">Shows</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="episodes.html">Episodes</a></li>
+            </ul>
+            <a href="https://www.youtube.com/@VibezandViews" target="_blank" class="subscribe-btn">Watch Now</a>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <!-- Contact Page Hero -->
+    <section class="contact-hero">
+        <div class="contact-hero-content">
+            <h1>Get In Touch</h1>
+            <p class="hero-subtitle">We'd love to hear from you! Share your story, suggest topics, or just say hello.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Share Your Story</h2>
+                <p class="contact-subtitle">Got a story to tell? A topic you want us to discuss? We'd love to hear from you!</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>hello@vibezandviews.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <h4>Social Media</h4>
+                             <a href="https://wa.me/27695902830?text=Hi%20Vibez%26Views!%20I%20have%20a%20story%20to%20share" target="_blank" 
+                             style="color: var(--text-muted); text-decoration: none;">Click Here to Chat with us on WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🎥</div>
+                        <div>
+                            <h4>YouTube</h4>
+                            <p><a href="https://www.youtube.com/@VibezandViews" target="_blank" class="">youtube.com/@VibezandViews</a></p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Newsletter Signup Box (Beautiful & Working) ...
+                <div class="newsletter-box">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <p>Get weekly episode updates, exclusive behind-the-scenes, and early guest announcements!</p>
+                    
+                  ...Beehiiv Form – Change only if you use another provider 
+                    <form action="https://embeds.beehiiv.com/YOUR-PUBLICATION-ID/subscribe" 
+                          method="POST" 
+                          class="newsletter-form" 
+                          target="_blank">
+                        <input type="email" name="email" placeholder="you@example.com" required />
+                        <input type="hidden" name="tags" value="website-contact" />
+                        <button type="submit">Subscribe Free</button>
+                    </form>
+                    <small style="opacity:0.8; margin-top:12px; display:block;">Zero spam • Unsubscribe anytime</small>
+                </div>-->
+
+
+
+                <div class="contact-cta">
+                    <h3>Why Share Your Story?</h3>
+                    <ul>
+                        <li>💡 Suggest topics for upcoming episodes</li>
+                        <li>🎤 Potential guest appearances</li>
+                        <li>🗣️ Share your unique perspective</li>
+                        <li>🤝 Connect with our community</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/xldvgyzz" method="POST">
+                    <h3>Tell Us Your Story</h3>
+                    
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="_replyto" required placeholder="your@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number (Optional)</label>
+                        <div class="phone-input-wrapper">
+                            <select id="countryCode" name="countryCode" class="country-select">
+                                <option value="+27" data-flag="🇿🇦">🇿🇦 +27</option>
+                                <option value="+1" data-flag="🇺🇸">🇺🇸 +1</option>
+                                <option value="+44" data-flag="🇬🇧">🇬🇧 +44</option>
+                                <option value="+91" data-flag="🇮🇳">🇮🇳 +91</option>
+                                <option value="+61" data-flag="🇦🇺">🇦🇺 +61</option>
+                                <option value="+81" data-flag="🇯🇵">🇯🇵 +81</option>
+                                <option value="+86" data-flag="🇨🇳">🇨🇳 +86</option>
+                                <option value="+33" data-flag="🇫🇷">🇫🇷 +33</option>
+                                <option value="+49" data-flag="🇩🇪">🇩🇪 +49</option>
+                                <option value="+39" data-flag="🇮🇹">🇮🇹 +39</option>
+                                <option value="+34" data-flag="🇪🇸">🇪🇸 +34</option>
+                                <option value="+234" data-flag="🇳🇬">🇳🇬 +234</option>
+                                <option value="+254" data-flag="🇰🇪">🇰🇪 +254</option>
+                                <option value="+233" data-flag="🇬🇭">🇬🇭 +233</option>
+                                <option value="+20" data-flag="🇪🇬">🇪🇬 +20</option>
+                                <option value="+971" data-flag="🇦🇪">🇦🇪 +971</option>
+                                <option value="+966" data-flag="🇸🇦">🇸🇦 +966</option>
+                                <option value="+55" data-flag="🇧🇷">🇧🇷 +55</option>
+                                <option value="+52" data-flag="🇲🇽">🇲🇽 +52</option>
+                                <option value="+54" data-flag="🇦🇷">🇦🇷 +54</option>
+                            </select>
+                            <input type="tel" id="phone" name="phone" placeholder="XX XXX XXXX" class="phone-number-input">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="topic">What's This About? *</label>
+                        <select id="topic" name="topic" required>
+                            <option value="">Select a topic</option>
+                            <option value="story">Share My Story</option>
+                            <option value="guest">Interested in Being a Guest</option>
+                            <option value="topic-suggestion">Topic Suggestion</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="collaboration">Collaboration Opportunity</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" rows="6" required placeholder="Share your story, idea, or message with us..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="supportingDocs">Upload Supporting Docs (if applicable)</label>
+                        <div class="file-upload-wrapper drag-drop-area">
+                            <input type="file" id="supportingDocs" name="supportingDocs" accept=".jpg,.jpeg,.png,.pdf" multiple class="file-input">
+                            <label for="supportingDocs" class="file-label drag-drop-label">
+                                <span class="file-icon">📎</span>
+                                <span class="file-text">Drag and Drop (or) <strong>Choose Files</strong></span>
+                                <span class="file-name">No files chosen</span>
+                            </label>
+                            <p class="file-info">JPG, PNG & PDF files only. Max 5MB per file.</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="subscribe" id="subscribe" value="yes">
+                            <span>Subscribe to our newsletter for updates and exclusive content</span>
+                        </label>
+                    </div>
+
+                    <!-- Honeypot field for spam protection -->
+                    <input type="text" name="_gotcha" style="display:none">
+                    
+                    <!-- Success message redirect -->
+                    <input type="hidden" name="_next" value="contact-success.html">
+
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-icon">✨</span>
+                    </button>
+
+                    <p class="form-note">We read every message and typically respond within 48 hours!</p>
+                </form>
+
+                <!-- Success Message (hidden by default) -->
+                <div id="successMessage" class="success-message" style="display: none;">
+                    <div class="success-icon">✅</div>
+                    <h3>Message Sent Successfully!</h3>
+                    <p>Thank you for reaching out! We'll get back to you within 48 hours.</p>
+                    <a href="index.html" class="btn-primary">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscribe Section -->
+    <section class="subscribe-section">
+        <h2>Never Miss an Episode</h2>
+        <p>Subscribe on your favorite platform and join the conversation! 👍🏾</p>
+        <div class="platform-links">
+            <a href="https://www.youtube.com/@VibezandViews" target="_blank" class="platform-btn">
+                <span>▶️</span> YouTube
+            </a>
+            <a href="https://www.youtube.com/@VibezandViews" target="_blank" class="platform-btn">
+                <span>🔔</span> Subscribe
+            </a>
+            <a href="https://www.youtube.com/@VibezandViews" target="_blank" class="platform-btn">
+                <span>👍</span> Like
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Vibez&Views</h3>
+                <p>Your ultimate destination for unfiltered conversations, vibes and fresh perspectives.</p>
+                <p style="margin-top: 1rem; color: #4a90e2;">Real Talk, Real Vibes, Real Life! 💥</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="index.html#shows">Our Shows</a>
+                <a href="index.html#about">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="https://www.youtube.com/@VibezandViews" target="_blank">YouTube Channel</a>
+            </div>
+            <div class="footer-section">
+                <h3>Schedule</h3>
+                <p><strong>Vibez & Views:</strong><br>Fridays at 6:30 PM</p>
+                <p><strong>Girls Unscripted:</strong><br>Wednesdays at 6:30 PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <p>Join our community and stay updated with the latest episodes and behind-the-scenes content.</p>
+                <div class="social-links">
+                    <a href="https://www.youtube.com/@VibezandViews" target="_blank" title="YouTube">▶️</a>
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="Twitter">🐦</a>
+                    <a href="contact.html" title="Contact">✉️</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Vibez&Views. All rights reserved. | Joined August 2024</p>
+        </div>
+    </footer>
+
+    <script src="contact.js"></script>
+</body>
+</html>

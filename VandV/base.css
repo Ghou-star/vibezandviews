@@ -1,0 +1,232 @@
+/* ========================================
+   BASE STYLES & VARIABLES
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Color Variables */
+    --primary-gold: #FFD700;
+    --gold-dark: #FFA500;
+    --gold-light: #FFA500;
+    --accent-bronze: #cd7f32;
+    --primary-blue: rgb(0, 13, 255);
+    --primary-green: #15ff00;
+    --primary-red: #ff0000;
+    --primary-orange: #ff5e00;
+    --primary-pink: #ff005d;
+    
+    /* Background Colors */
+    --bg-dark: #0a0a0a;
+    --bg-darker: #050505;
+    --bg-card: #121212;
+    
+    /* Text Colors */
+    --text-light: #e8e8e8;
+    --text-muted: #b8b8b8;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+    
+    /* Border Radius */
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 25px;
+    --radius-xl: 30px;
+    
+    /* Shadows */
+    --shadow-sm: 0 4px 15px rgba(201, 169, 97, 0.2);
+    --shadow-md: 0 8px 25px rgba(201, 169, 97, 0.3);
+    --shadow-lg: 0 20px 50px rgba(201, 169, 97, 0.2);
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* ========================================
+   BASE ELEMENTS
+   ======================================== */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-light);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    font-weight: 900;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-normal);
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.section-padding {
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary-gold), var(--gold--primary-gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ========================================
+   CUSTOM SCROLLBAR
+   ======================================== */
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-darker);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-gold);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold--primary-gold-light);
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-gold) var(--bg-darker);
+}
+
+/* ========================================
+   TEXT SELECTION
+   ======================================== */
+
+::selection {
+    background: var(--primary-gold);
+    color: var(--bg-dark);
+}
+
+::-moz-selection {
+    background: var(--primary-gold);
+    color: var(--bg-dark);
+}
+
+/* ========================================
+   FOCUS STYLES
+   ======================================== */
+
+*:focus-visible {
+    outline: 2px solid var(--primary-gold);
+    outline-offset: 2px;
+}
+
+/* ========================================
+   PLACEHOLDER STYLES
+   ======================================== */
+
+::placeholder {
+    color: rgba(184, 184, 184, 0.5);
+    font-size: 0.95rem;
+}
+
+::-webkit-input-placeholder {
+    color: rgba(184, 184, 184, 0.5);
+}
+
+::-moz-placeholder {
+    color: rgba(184, 184, 184, 0.5);
+}
+
+:-ms-input-placeholder {
+    color: rgba(184, 184, 184, 0.5);
+}
+
+/* ========================================
+   SMOOTH TRANSITIONS
+   ======================================== */
+
+a, button, input, select, textarea {
+    transition: all var(--transition-normal);
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+    header,
+    .hero::before,
+    .hero::after,
+    .subscribe-section,
+    footer,
+    .mobile-menu-btn {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .show-card,
+    .feature-card,
+    .contact-form-wrapper {
+        border: 1px solid #ddd;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+}
